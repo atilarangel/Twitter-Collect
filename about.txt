@@ -1,0 +1,19 @@
+﻿Sobre o trabalho)
+Twitter Collect é um programa, desenvolvido por alunos de engenharia elétrica da UFRJ, que utiliza a biblioteca (api) tweepy para entrar em algum twitter dado pelo usuário e analisar as palavras mais frequentes, dada as condições específicadas pelo usuário
+
+Programa desenvolvido por:
+Atila Rangel, Natália Godinho, Rafael Vazquez e Rodrigo Winks
+
+Passo a Passo
+
+main.py>Digite o nome de usuario com determinadas condicoes>fim
+
+Questão)
+O interface deve perguntar o nome da conta do Twitter no qual se deseja recuperar o tweets (aqueles sem restrição de acesso).
+A interface deve então capturar TODOS os tweets e analisar a frequência de ocorrência das palavras, listando as palavras mais frequentes
+em ordem decrescente. O programa ainda deve dar a opção ao usuário para além de analisar uma conta do Twiiter também analisar TODOS os
+seus following (outras contas que aquela conta segue), retornando a frequência das palavras de todos esses tweets (da conta e de seus
+followings).
+
+A interface também deve perguntar se o usuário quer remover as stop words (veja o conceito aqui). Se o usuário informar que deseja, o
+programa deve remover do conteúdo da página as palavras presentes nesse arquivo texto antes de prosseguir a análise a fim.
