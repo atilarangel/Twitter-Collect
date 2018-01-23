@@ -2,7 +2,7 @@
 Twitter Collect é um programa, desenvolvido por alunos de engenharia elétrica da UFRJ, que utiliza a biblioteca (api) tweepy para entrar em algum twitter dado pelo usuário e analisar as palavras mais frequentes, dada as condições específicadas pelo usuário
 
 Programa desenvolvido por:
-Atila Rangel, Natália Godinho, Rafael Vazquez e Rodrigo Winks
+Atila Rangel
 
 Passo a Passo
 
