@@ -16,7 +16,8 @@ Na página seguinte ao formulário, há uma aba Keys and Access Tokens na parte 
 Nessa tela já aparecem logo em cima duas chaves que vamos precisar inserir em nosso código: Consumer Key e Consumer Secret. Anote esses códigos.
 Ainda nessa mesma janela, vá à parte inferior e clique no botão Create My Access Token. Anote os códigos Access Token e Access Token Secret. Pronto!
 
-Na sequência, é necessária a instalação do do módulo tweepy para a execução dessa tarefa. Primeiramente, baixe e descompacte esse ZIP. Depois vá ao Prompt de Comando do Windows ou terminal do Linux, acesse a pasta onde está o conteúdo descompactado e digite: python setup.py install
+Na sequência, é necessária a instalação do do módulo tweepy para a execução dessa tarefa. 
+http://docs.tweepy.org/en/v3.5.0/install.html?highlight=installation 
 
 Talvez a instalação informe problema na chave de licença de um módulo opcional. Ignore. Se a conta do Twitter utilizada não possuir nenhum tweet, crie uns dois ou três e rode o seguinte código para retornar os tweets da sua conta:
 
