@@ -1,19 +1,38 @@
-﻿Sobre o trabalho)
-Twitter Collect é um programa, desenvolvido por alunos de engenharia elétrica da UFRJ, que utiliza a biblioteca (api) tweepy para entrar em algum twitter dado pelo usuário e analisar as palavras mais frequentes, dada as condições específicadas pelo usuário
+Sobre o projeto)
+Twitter Collect é um programa, desenvolvido por um aluno de engenharia elétrica da UFRJ, que utiliza a biblioteca (api) tweepy para entrar em algum twitter dado pelo usuário e analisar as palavras mais frequentes, dada as condições específicadas pelo usuário
 
 Programa desenvolvido por:
 Atila Rangel
 
-Passo a Passo
+Professor que orientou o projeto:
+Professor José Augusto Sapienza Ramos
 
-main.py>Digite o nome de usuario com determinadas condicoes>fim
+Primeiramente você precisará utilizar uma conta no Twitter já existente ou criar uma para receber a autorização de acesso à base de tweets via o programa. Após criada a conta, faça os seguintes procedimentos:
 
-Questão)
-O interface deve perguntar o nome da conta do Twitter no qual se deseja recuperar o tweets (aqueles sem restrição de acesso).
-A interface deve então capturar TODOS os tweets e analisar a frequência de ocorrência das palavras, listando as palavras mais frequentes
-em ordem decrescente. O programa ainda deve dar a opção ao usuário para além de analisar uma conta do Twiiter também analisar TODOS os
-seus following (outras contas que aquela conta segue), retornando a frequência das palavras de todos esses tweets (da conta e de seus
-followings).
+Confira se o seu telefone celular está registrado corretamente na conta do Twitter neste link. Esse é um pré-requisito que o Twitter nos impõe para recebermos as chaves de acesso.
+Depois acesse https://apps.twitter.com/ e logue com a conta do Twitter;
+Clique no botão Create New App e preencha o formulário. Deixe o Callback URL em branco e em URL coloque qualquer website (com http:// antes). O resto dos campos não influenciam no funcionamento do programa posteriormente.
+Na página seguinte ao formulário, há uma aba Keys and Access Tokens na parte superior. Clique nela.
+Nessa tela já aparecem logo em cima duas chaves que vamos precisar inserir em nosso código: Consumer Key e Consumer Secret. Anote esses códigos.
+Ainda nessa mesma janela, vá à parte inferior e clique no botão Create My Access Token. Anote os códigos Access Token e Access Token Secret. Pronto!
 
-A interface também deve perguntar se o usuário quer remover as stop words (veja o conceito aqui). Se o usuário informar que deseja, o
-programa deve remover do conteúdo da página as palavras presentes nesse arquivo texto antes de prosseguir a análise a fim.
+Na sequência, é necessária a instalação do do módulo tweepy para a execução dessa tarefa. Primeiramente, baixe e descompacte esse ZIP. Depois vá ao Prompt de Comando do Windows ou terminal do Linux, acesse a pasta onde está o conteúdo descompactado e digite: python setup.py install
+
+Talvez a instalação informe problema na chave de licença de um módulo opcional. Ignore. Se a conta do Twitter utilizada não possuir nenhum tweet, crie uns dois ou três e rode o seguinte código para retornar os tweets da sua conta:
+
+import tweepy
+# coloque as SUAS quatro chaves como strings
+consumer_key = '###'
+consumer_secret = '###'
+access_token = '###'
+access_token_secret = '###'
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret) # conectando ao usuario
+auth.set_access_token(access_token, access_token_secret) # configurando acesso ao app
+api = tweepy.API(auth) # gerando a interface de comunicacao com o servidor do Twitter
+
+public_tweets = api.home_timeline() # pega os 20 tweets mais recentes da timeline do usuario
+for tweet in public_tweets:
+    print tweet.text # imprime o texto de cada tweet
+
+Se o código acima funcionar, pronto! Está tudo ok. A documentação e exemplos sobre o módulo tweepy é acessada neste link e especialmente aqui.
